@@ -10,7 +10,7 @@ def arm_and_takeoff(target_altitude):
     print("Basic pre-arm checks")
     while not vehicle.is_armable:
         print(" Waiting for vehicle to initialise...")
-        time.sleep(10)
+        time.sleep(5)
 
     print("Arming motors")
     vehicle.mode = VehicleMode("GUIDED")
@@ -18,7 +18,7 @@ def arm_and_takeoff(target_altitude):
 
     while not vehicle.armed:
         print(" Waiting for arming...")
-        time.sleep(10)
+        time.sleep(1)
 
     print("Taking off!")
     vehicle.simple_takeoff(target_altitude)
@@ -35,7 +35,7 @@ arm_and_takeoff(3)  # Take off to 1 meter
 
 # 2. Hold position for 5 seconds
 print("Hold position for 5 seconds")
-time.sleep(5)
+time.sleep(10)
 
 # 3. Move forward (to the north) for 2 seconds
 print("Moving forward to the north")
